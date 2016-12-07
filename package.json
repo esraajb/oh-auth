@@ -1,0 +1,26 @@
+{
+  "name": "oh-auth",
+  "version": "1.0.0",
+  "description": "We are building a platform to help you keep track of how many issues you open and close each week.",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esraajb/oh-auth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esraajb/oh-auth/issues"
+  },
+  "homepage": "https://github.com/esraajb/oh-auth#readme",
+  "dependencies": {
+    "env2": "^2.1.1",
+    "hapi": "^16.0.1",
+    "inert": "^4.0.3",
+    "request": "^2.79.0",
+    "vision": "^4.1.1"
+  }
+}

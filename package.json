@@ -4,6 +4,7 @@
   "description": "We are building a platform to help you keep track of how many issues you open and close each week.",
   "main": "start.js",
   "scripts": {
+    "start":"node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

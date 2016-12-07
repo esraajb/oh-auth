@@ -1,6 +1,6 @@
 const Hapi = require('hapi');
 const Inert = require('inert');
-const env = require('env2')('../oh-auth/config.env');
+const env = require('env2')('./config.env');
 const Vision = require('vision');
 const routes = require('./routes.js');
 const handlebars = require('./configure_handlebars')

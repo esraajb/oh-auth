@@ -4,8 +4,14 @@ header {
   text-align: center;
   font-size: 3em;
   color: rgb(182, 116, 116);
+  margin-bottom: 2em;
 }
 
 p {
-  color: red;
+  color: rgb(182, 116, 116);
+  text-align: center;
+}
+
+.github_loign_button {
+  text-align: center;
 }

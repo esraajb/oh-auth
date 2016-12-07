@@ -5,7 +5,8 @@ module.exports = (server) => {
     engines: { html: handlebars },
     relativeTo: __dirname,
     path: '../views',
-    layout: 'layout',
-    layoutPath: '../views/layouts'
+    layout: 'default',
+    layoutPath: '../views/layouts',
+    partialsPath: '../views/partials',
   });
 }

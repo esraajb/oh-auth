@@ -1,0 +1,11 @@
+header {
+  border-bottom: 2px solid rgb(182, 116, 116);
+  height: 65px;
+  text-align: center;
+  font-size: 3em;
+  color: rgb(182, 116, 116);
+}
+
+p {
+  color: red;
+}

@@ -2,6 +2,8 @@
 
 We are building a platform to help you keep track of how many issues you open and close each week.
 
+![Mockup](https://github.com/esraajb/oh-auth/blob/master/OhAuth%20mockup.png)
+
 ## Installation instructions
 [to be added]
 

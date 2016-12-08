@@ -46,7 +46,7 @@ const results ={
        jwt.sign(payload,secret,options2, (err,token) => {
         console.log(token);
         console.log('decoded token',jwt.verify(token, process.env.SECRET));
-        reply.redirect('/restricted').state('token', token, { path: '/restricted',isSecure: process.env.NODE_ENV === 'PRODUCTION' });
+        reply.redirect('/restricted').state('token', token, {isSecure: process.env.NODE_ENV === 'PRODUCTION' });
       });
 
     //  reply(payload);

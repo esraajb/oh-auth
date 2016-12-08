@@ -20,8 +20,8 @@ module.exports = {
         closed_at: a.closed_at
       }
     });
-    reply(issueData);
-    // reply.view('', {issueData})
+    //reply(issueData);
+    reply.view('user_issues', {issueData})
   })
 }
 };

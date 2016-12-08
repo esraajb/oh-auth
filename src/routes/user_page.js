@@ -11,8 +11,17 @@ module.exports = {
   }
   let url = 'https://api.github.com/issues?state=all';
   request.get({url:url, headers:header}, (err, response, body) => {
-    let issueData = JSON.parse(body).map(function(a){return [`issue #${a.number}`, a.title, a.state, a.created_at.slice(11,-1)]})
+    let issueData = JSON.parse(body).map(function(a){
+      return {
+        issue_number: a.number,
+        title: a.title,
+        state: a.state,
+        created_at: a.created_at,
+        closed_at: a.closed_at
+      }
+    });
     reply(issueData);
+    // reply.view('', {issueData})
   })
 }
 };

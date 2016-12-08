@@ -25,7 +25,6 @@ var users = {
 var validate = function(token, request,callback){
   console.log('Calling the validate function');
 //  let decoded = jwt.verify(token, process.env.SECRET);
-  console.log(token);
   if (users[token.user.user_id]){
     return callback(null,true)
   }else{

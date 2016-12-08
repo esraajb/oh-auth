@@ -43,10 +43,13 @@ const results ={
          'expiresIn': Date.now() + 24 * 60 * 60 * 1000,
          'subject': 'github-data'
        }
-      jwt.sign(payload,secret,options2, (err,token) => {
+       jwt.sign(payload,secret,options2, (err,token) => {
         console.log(token);
+        console.log('decoded token',jwt.verify(token, process.env.SECRET));
+        reply.redirect('/restricted').state('token', token, { path: '/restricted',isSecure: process.env.NODE_ENV === 'PRODUCTION' });
       });
-      reply(payload);
+
+    //  reply(payload);
     });
   });
 }

@@ -3,7 +3,7 @@ const Inert = require('inert');
 const env = require('env2')('./config.env');
 const Vision = require('vision');
 const routes = require('./routes.js');
-const handlebars = require('./configure_handlebars')
+const Handlebars = require('./configure_handlebars')
 const HapiAuthJWT2 = require('hapi-auth-jwt2');
 const jwt = require('jsonwebtoken');
 const server = new Hapi.Server();
@@ -37,6 +37,7 @@ server.register([Inert, Vision, HapiAuthJWT2],
       validateFunc: validate,
       verifyOptions: { algorithms: [ 'HS256' ] }
     });
+    Handlebars(server);
     server.route(routes);
   }
 );

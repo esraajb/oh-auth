@@ -24,7 +24,7 @@ var validate = function(token, request,callback){
   console.log(token);
   if (users[token.user.user_id]){
     return callback(null,true)
-  }else{
+  } else {
     return callback(null,false)
   }
 }

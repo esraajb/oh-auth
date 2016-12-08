@@ -26,9 +26,9 @@ const results = {
         let url = `https://api.github.com/user`;
 
         Request.get({url:url, headers:header}, function (error, response, body) {
-          // if (error) throw error;
-          // if (response.statusCode !== 200) console.log('Error, status code is: ', response.statusCode);
-          // if (response.statusCode === 200) {
+          if (error) throw error;
+          if (response.statusCode !== 200) console.log('Error, status code is: ', response.statusCode);
+          if (response.statusCode === 200) {
             console.log('Response: ', response.statusCode);
             const secret = process.env.SECRET;
             body = JSON.parse(body);
@@ -50,7 +50,7 @@ const results = {
               console.log('decoded token',jwt.verify(token, process.env.SECRET));
               reply.redirect('/restricted').state('token', token, { path: '/restricted',isSecure: process.env.NODE_ENV === 'PRODUCTION' });
             });
-      //     }
+          }
         });
       }
     });

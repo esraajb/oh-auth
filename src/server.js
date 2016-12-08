@@ -27,7 +27,6 @@ var validate = function(token, request,callback){
   }else{
     return callback(null,false)
   }
-
 }
 
 server.register([Inert, Vision, HapiAuthJWT2],
@@ -40,8 +39,6 @@ server.register([Inert, Vision, HapiAuthJWT2],
     });
     server.route(routes);
   }
-)
-
-  handlebars(server)
+);
 
 module.exports = server;

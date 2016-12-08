@@ -8,8 +8,7 @@ const login = {
   handler: (request,reply) => {
     let query={
       client_id : process.env.CLIENT_ID,
-      redirect_uri : process.env.BASE_URL + '/results',
-      scope: 'user public_repo'
+      redirect_uri : process.env.BASE_URL + '/results'
     }
     reply.redirect('https://github.com/login/oauth/authorize/?'+Querystring.stringify(query));
   }

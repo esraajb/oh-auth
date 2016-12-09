@@ -12,6 +12,7 @@ We are building a platform to help you keep track of how many issues you open an
 - Add a config.env file with the env variables in it (get these from us)
 - Run ```node db_build.js``` to build the database
 - Run ```npm start``` to start the database
+- Go to localhost:4000
 
 ### Dependencies
 - Hapi

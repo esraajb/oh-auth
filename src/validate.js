@@ -1,3 +1,4 @@
+const userQuery = require('./dbRequests/getUser.js');
 module.exports = function(token, request,callback){
   console.log('Calling the validate function');
   console.log(token.user.user_id);

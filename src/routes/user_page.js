@@ -15,13 +15,13 @@ module.exports = {
       let created = new Date(a.created_at);
       let createdDisplay = created.toString().slice(0,10).concat(new Date(a.created_at).toString().slice(15,24));
       let closed = new Date(a.closed_at);
-      let closedDisplay = closed.toString().slice(0,10).concat(new Date(a.created_at).toString().slice(15,24));
+      let closedDisplay = closed.toString().slice(0,10).concat(new Date(a.closed_at).toString().slice(15,24));
       return {
         issue_number: a.number,
         title: a.title,
         state: a.state,
         created_at: createdDisplay,
-        closed_at: closedDisplay,
+        closed_at: (a.state === 'open') ? 'Still open' : closedDisplay,
         velocity: (a.state === 'open'? null : velocity(a.closed_at, a.created_at))
       }
     });

@@ -5,8 +5,14 @@ const Vision = require('vision');
 const routes = require('./routes.js');
 const HapiAuthJWT2 = require('hapi-auth-jwt2');
 const jwt = require('jsonwebtoken');
-const server = new Hapi.Server();
-const userQuery = require('./dbRequests/getUser.js');
+const options = {
+    connections: {
+        state: {
+            isSameSite: 'Lax'
+        }
+    }
+};
+const server = new Hapi.Server(options);
 const validate = require('./validate.js');
 server.connection({
   port: process.env.PORT || 4000

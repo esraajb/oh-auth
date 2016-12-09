@@ -31,6 +31,7 @@ const results ={
          },
          'accessToken': token.access_token
        };
+       console.log('payload',payload);
        let options={
         'algorithm': 'HS256',
         'expiresIn': Date.now() + 24 * 60 * 60 * 1000,
@@ -39,7 +40,13 @@ const results ={
        jwt.sign(payload,secret,options, (err,token) => {
         console.log(token);
         console.log('decoded token',jwt.verify(token, process.env.SECRET));
-        reply.redirect('/issues').state('token', token, {isSecure: process.env.NODE_ENV === 'PRODUCTION' });
+        reply
+          .redirect('/issues')
+          .state('token', token,
+            {path: '/',
+            isHttpOnly: false,
+            // ttl
+            isSecure: process.env.NODE_ENV === 'PRODUCTION' });
       });
 
     //  reply(payload);

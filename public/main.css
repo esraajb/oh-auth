@@ -15,3 +15,11 @@ p {
 .github_loign_button {
   text-align: center;
 }
+
+.all-issue__elements {
+  padding-top: 10px;
+}
+
+.issue__elements {
+  padding-left: 5vw;
+}

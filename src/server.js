@@ -7,23 +7,11 @@ const HapiAuthJWT2 = require('hapi-auth-jwt2');
 const jwt = require('jsonwebtoken');
 const server = new Hapi.Server();
 const userQuery = require('./dbRequests/getUser.js');
+const validate = require('./validate.js');
 server.connection({
   port: process.env.PORT || 4000
 });
 
-var validate = function(token, request,callback){
-  console.log('Calling the validate function');
-  console.log(token.user.user_id);
-    userQuery((err, data) => {
-      if (err) { throw err; }
-      console.log(data);
-      if (data){
-        return callback(null,true)
-      }else{
-        return callback(null,false)
-      }
-    }, token.user.user_id);
-}
 
 server.register([Inert, Vision, HapiAuthJWT2],
   (err) => {

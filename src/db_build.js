@@ -15,7 +15,6 @@ const buildDatabase = (cb) => {
 };
 
 buildDatabase((err, res) => {
-  if(err) throw err;
-  console.log('Database built!');
-})
-//module.exports = buildDatabase;
+  if(err) {throw err;}
+  console.log('Database is being built...be patient my dear user :)');
+});

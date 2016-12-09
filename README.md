@@ -10,7 +10,7 @@ We are building a platform to help you keep track of how many issues you open an
 - Add a postgres admin called ```CREATE USER ohadmin WITH SUPERUSER PASSWORD 'letmein';```
 - Add the database ```CREATE DATABASE ohauth_db OWNER ohadmin;```
 - Add a config.env file with the env variables in it (get these from us)
-- Run ```node db_build.js``` to build the database
+- Run ```node src/db_build.js``` to build the database
 - Run ```npm start``` to start the database
 - Go to localhost:4000
 

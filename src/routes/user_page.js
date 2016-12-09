@@ -34,7 +34,7 @@ module.exports = {
       var hours =  Math.floor((milliseconds / (1000*60*60)) % 24);
       var days = Math.floor((milliseconds / (1000*60*60*24)) % 7);
       var weeks = Math.floor(milliseconds / (1000*60*60*24*7));
-      return weeks+':'+days+':'+hours+':'+minutes+':'+seconds;
+      return `${weeks}:${days}:${hours}:${minutes}:${seconds}`;
     }
   })
 }

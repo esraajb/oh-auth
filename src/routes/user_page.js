@@ -1,6 +1,5 @@
 const request = require('request');
 
-
 module.exports = {
   method:'GET',
   path:'/issues',
@@ -22,7 +21,6 @@ module.exports = {
         velocity: (a.state === 'open'? null : velocity(a.closed_at,a.created_at))
       }
     });
-    //reply(issueData);
     reply.view('user_issues', {issueData})
 
     function velocity(endDate,startDate){

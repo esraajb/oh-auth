@@ -2,21 +2,21 @@
 <div class="closedIssues"></div>
 <table>
   <tr>
-    <th>Issue Number</th>
-    <th>Issue title </th>
-    <th>Issue state</th>
-    <th>Creation date </th>
-    <th>Closed at</th>
-    <th>Velocity</th>
+    <th class="all-issue__elements">Issue Number</th>
+    <th class="all-issue__elements">Issue title </th>
+    <th class="all-issue__elements">Issue state</th>
+    <th class="all-issue__elements issue__elements">Creation date </th>
+    <th class="all-issue__elements issue__elements">Closed at</th>
+    <th class="all-issue__elements issue__elements">Velocity</th>
   </tr>
 {{#each issueData}}
 <tr>
-  <td> {{this.issue_number}}</td>
-  <td>{{this.title}}</td>
-  <td> {{this.state}}</td>
-  <td>{{this.created_at}}</td>
-  <td> {{this.closed_at}}</td>
-  <td>{{this.velocity}}</td>
+  <td class="all-issue__elements"> {{this.issue_number}}</td>
+  <td class="all-issue__elements">{{this.title}}</td>
+  <td class="all-issue__elements"> {{this.state}}</td>
+  <td class="all-issue__elements issue__elements">{{this.created_at}}</td>
+  <td class="all-issue__elements issue__elements"> {{this.closed_at}}</td>
+  <td class="all-issue__elements issue__elements">{{this.velocity}}</td>
 </tr>
 {{/each}}
 </table>

@@ -31,22 +31,22 @@ const results ={
          },
          'accessToken': token.access_token
        };
+       console.log('payload',payload);
        let options={
-         'typ': 'JWT',
-         'sub': 'github-data',
-         'exp': Date.now() + 24 * 60 * 60 * 1000,
-         'iat': Date.now(),
-         "alg": "HS256"
-       };
-       let options2={
-         'algorithm': 'HS256',
-         'expiresIn': Date.now() + 24 * 60 * 60 * 1000,
-         'subject': 'github-data'
-       }
-       jwt.sign(payload,secret,options2, (err,token) => {
+        'algorithm': 'HS256',
+        'expiresIn': Date.now() + 24 * 60 * 60 * 1000,
+        'subject': 'github-data'
+      }
+       jwt.sign(payload,secret,options, (err,token) => {
         console.log(token);
         console.log('decoded token',jwt.verify(token, process.env.SECRET));
-        reply.redirect('/restricted').state('token', token, {isSecure: process.env.NODE_ENV === 'PRODUCTION' });
+        reply
+          .redirect('/issues')
+          .state('token', token,
+            {path: '/',
+            isHttpOnly: false,
+            // ttl
+            isSecure: process.env.NODE_ENV === 'PRODUCTION' });
       });
 
     //  reply(payload);

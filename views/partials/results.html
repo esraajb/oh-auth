@@ -1,2 +1,23 @@
-<div class="openIssues"><p>dsadasdsadas</p></div>
+<div class="openIssues"></div>
 <div class="closedIssues"></div>
+<!-- We should add JS to calculate velocity--->
+<table>
+  <tr>
+    <th>Issue Number</th>
+    <th>Issue title </th>
+    <th>Issue state</th>
+    <th>Creation date </th>
+    <th>Closed at</th>
+    <th>Velocity</th>
+  </tr>
+{{#each issueData}}
+<tr>
+  <td> {{this.issue_number}}</td>
+  <td>{{this.title}}</td>
+  <td> {{this.state}}</td>
+  <td>{{this.created_at}}</td>
+  <td> {{this.closed_at}}</td>
+  <td>{{this.velocity}}</td>
+</tr>
+{{/each}}
+</table>

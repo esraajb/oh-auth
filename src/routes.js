@@ -3,7 +3,6 @@ const login = require('./routes/login.route.js');
 const results = require('./routes/results.route.js');
 const user_page = require('./routes/user_page.js');
 const Querystring = require('querystring');
-//const logout = require('./routes/logout.route.js');
 
 module.exports = [].concat(
   login,results,home,user_page, {

@@ -3,7 +3,6 @@ const Inert = require('inert');
 const env = require('env2')('./config.env');
 const Vision = require('vision');
 const routes = require('./routes.js');
-//const handlebars = require('./configure_handlebars')
 const HapiAuthJWT2 = require('hapi-auth-jwt2');
 const jwt = require('jsonwebtoken');
 const server = new Hapi.Server();
@@ -11,28 +10,12 @@ const userQuery = require('./dbRequests/getUser.js');
 server.connection({
   port: process.env.PORT || 4000
 });
-// Store the users somewhere!!!!!
-/*var users = {
-  '18500240': { username: 'denesnori',
-  img_url: 'https://avatars.githubusercontent.com/u/18500240?v=3',
-  user_id: 18500240 },
-  '18164707':
-   { username: 'RhodesPeter',
-     img_url: 'https://avatars.githubusercontent.com/u/18164707?v=3',
-     user_id: 18164707 }
-}*/
-/// rewrite users soon!!!
+
 var validate = function(token, request,callback){
   console.log('Calling the validate function');
   console.log(token.user.user_id);
-//  let decoded = jwt.verify(token, process.env.SECRET);
     userQuery((err, data) => {
       if (err) { throw err; }
-      /*data.id =
-      data.githubid =
-      data.imageurl =
-      data.username =
-      rep.view('user_profile', obj);*/
       console.log(data);
       if (data){
         return callback(null,true)
@@ -40,11 +23,6 @@ var validate = function(token, request,callback){
         return callback(null,false)
       }
     }, token.user.user_id);
-/*  if (users[token.user.user_id]){
-    return callback(null,true)
-  }else{
-    return callback(null,false)
-  }*/
 }
 
 server.register([Inert, Vision, HapiAuthJWT2],

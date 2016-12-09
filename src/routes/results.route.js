@@ -12,7 +12,6 @@ const results ={
     }
     Request.post({url:'https://github.com/login/oauth/access_token' , form: query }, (err,res,body) =>{
       if (err) throw err;
-      // reply(body);
       let token = Querystring.parse(body);
       let  header = {
             'User-Agent': 'oh_auth',
@@ -20,7 +19,6 @@ const results ={
       };
       let  url = `https://api.github.com/user`;
       Request.get({url:url, headers:header}, function (error, response, body) {
-           //reply(JSON.parse(body));
       const secret = process.env.SECRET;
       body =JSON.parse(body);
        let payload = {
@@ -45,11 +43,9 @@ const results ={
           .state('token', token,
             {path: '/',
             isHttpOnly: false,
-            // ttl
             isSecure: process.env.NODE_ENV === 'PRODUCTION' });
       });
 
-    //  reply(payload);
     });
   });
 }

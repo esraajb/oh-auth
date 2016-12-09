@@ -35,8 +35,8 @@ const results ={
         'subject': 'github-data'
       }
        jwt.sign(payload,secret,options, (err,token) => {
-        console.log(token);
-        console.log('decoded token',jwt.verify(token, process.env.SECRET));
+      //  console.log(token);
+      //  console.log('decoded token',jwt.verify(token, process.env.SECRET));
         reply
           .redirect('/issues')
           .state('token', token,
